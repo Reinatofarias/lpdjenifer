@@ -1858,7 +1858,7 @@ button {
 
 @keyframes hero-fade-in {
   from {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(24px);
   }
   to {
