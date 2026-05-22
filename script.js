@@ -312,6 +312,14 @@ const SimulatorController = {
 
     if (!slider || !valueDisplay || !revDisplay || !costDisplay || !profitDisplay) return;
 
+    const updateSliderFill = () => {
+      const min = parseFloat(slider.min) || 1;
+      const max = parseFloat(slider.max) || 6;
+      const val = parseFloat(slider.value);
+      const percent = ((val - min) / (max - min)) * 100;
+      slider.style.background = `linear-gradient(to right, var(--color-gold-500) 0%, var(--color-gold-300) ${percent}%, rgba(255, 255, 255, 0.08) ${percent}%)`;
+    };
+
     const updateValues = () => {
       const batches = parseInt(slider.value, 10);
       valueDisplay.textContent = batches;
@@ -324,6 +332,8 @@ const SimulatorController = {
       revDisplay.textContent = `R$ ${revenue.toLocaleString('pt-BR')}`;
       costDisplay.textContent = `R$ ${cost.toLocaleString('pt-BR')}`;
       profitDisplay.textContent = `R$ ${profit.toLocaleString('pt-BR')}`;
+
+      updateSliderFill();
     };
 
     slider.addEventListener('input', updateValues);

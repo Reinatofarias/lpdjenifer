@@ -235,8 +235,21 @@ button {
 }
 
 .section-headline strong {
-  color: var(--color-terracota);
   font-weight: var(--weight-bold);
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-700) 0%,
+    var(--color-gold-300) 25%,
+    #FFF0CD 50%,
+    var(--color-gold-300) 75%,
+    var(--color-gold-700) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-shimmer 4s linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .sr-only {
@@ -463,6 +476,18 @@ button {
   opacity: 0.95;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform var(--duration-normal) var(--ease-bounce),
+              filter var(--duration-normal) var(--ease-default),
+              opacity var(--duration-fast) var(--ease-default);
+}
+
+.bandeirinha:hover {
+  animation: none !important;
+  transform: scale(1.35) rotate(15deg) translateY(-3px) !important;
+  opacity: 1;
+  filter: drop-shadow(0 6px 12px rgba(197, 154, 78, 0.45));
+  z-index: 10;
+  cursor: pointer;
 }
 
 /* Alternate Flag Shapes (Triangular vs Two-Point cuts) for premium handcrafted look */
@@ -621,6 +646,29 @@ button {
   animation-delay: var(--delay);
 }
 
+.offer-card .particle {
+  animation-name: float-embers-card;
+  background: radial-gradient(circle, #FFE3A8 20%, rgba(213, 171, 85, 0.5) 80%);
+  box-shadow: 0 0 8px rgba(255, 227, 168, 0.9), 0 0 16px rgba(213, 171, 85, 0.6);
+}
+
+@keyframes float-embers-card {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-380px) scale(0.3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 @keyframes float-embers {
   0% {
     transform: translateY(0) scale(1) rotate(0deg);
@@ -702,8 +750,21 @@ button {
 }
 
 .hero__headline strong {
-  color: var(--color-gold-300);
   font-weight: var(--weight-bold);
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-700) 0%,
+    var(--color-gold-300) 25%,
+    #FFF0CD 50%,
+    var(--color-gold-300) 75%,
+    var(--color-gold-700) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-shimmer 4s linear infinite;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
 
 .hero__subheadline {
@@ -897,10 +958,38 @@ button {
               border-color var(--duration-normal) var(--ease-default);
 }
 
+.recipe-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.05) 70%,
+    transparent
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 5;
+  transition: left 0s;
+}
+
 @media (hover: hover) {
+  .recipe-card:hover::before {
+    left: 150%;
+    transition: left 1.2s var(--ease-default);
+  }
+
   .recipe-card:hover {
     transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
-    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55), var(--shadow-gold-md);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55), 
+                0 0 35px rgba(197, 154, 78, 0.4), 
+                inset 0 0 20px rgba(197, 154, 78, 0.25);
     border-color: var(--color-gold-300);
   }
 }
@@ -1014,6 +1103,8 @@ button {
   color: var(--color-gold-300); /* Luxury gold color */
   line-height: 1;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  animation: profit-glow-pulse 3s ease-in-out infinite alternate;
 }
 
 /* ═══════════════════════════════════════════
@@ -1183,6 +1274,8 @@ button {
   font-size: var(--text-3xl);
   color: var(--color-gold-300);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  animation: profit-glow-pulse 3s ease-in-out infinite alternate;
 }
 
 .simulator-card__helper {
@@ -1833,6 +1926,22 @@ button {
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
+}
+
+@keyframes gold-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes profit-glow-pulse {
+  0% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(213, 171, 85, 0.2);
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 22px rgba(213, 171, 85, 0.65);
+    transform: scale(1.03);
+  }
 }
 
 @keyframes sway {
