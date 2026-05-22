@@ -10,7 +10,7 @@
    ═══════════════════════════════════════════ */
 const CONFIG = {
   // URLs — update when checkout link is ready
-  CHECKOUT_URL: '#',
+  CHECKOUT_URL: 'https://pay.kiwify.com.br/OxJV34U',
 
   // Tracking IDs — update when provided
   META_PIXEL_ID: '',
