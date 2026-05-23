@@ -745,10 +745,10 @@ button {
 .hero__logo-overlap {
   display: block;
   position: absolute;
-  bottom: -45px; /* Lowered further to pants area for absolute high contrast */
+  bottom: -50px; /* Lowered further to pants area for absolute high contrast */
   left: 50%;
   transform: translateX(-50%);
-  width: 350px; /* Enlarged logo on mobile */
+  width: 380px; /* Visibly enlarged logo on mobile */
   z-index: 4; /* Render in front of Djenifer (which is z-index: 3) */
   pointer-events: none; /* Make clicks pass through */
 }
@@ -785,29 +785,28 @@ button {
   pointer-events: none;
 }
 
-/* Floating sales push notifications */
 .hero__notification {
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: rgba(29, 18, 13, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1.5px solid rgba(197, 154, 78, 0.28);
   border-radius: var(--radius-md);
-  padding: 8px 12px;
+  padding: 6px 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 
               inset 0 1px 2px rgba(255, 255, 255, 0.1);
   pointer-events: none;
   z-index: 5;
-  min-width: 210px;
-  max-width: 240px;
+  min-width: 170px;
+  max-width: 190px;
 }
 
 .hero__notification-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background: rgba(14, 9, 6, 0.8);
   border: 1px solid rgba(197, 154, 78, 0.45);
   border-radius: 6px;
@@ -816,7 +815,7 @@ button {
   justify-content: center;
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
-  font-size: 10px;
+  font-size: 9px;
   color: #FFF0D0;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05);
   flex-shrink: 0;
@@ -831,7 +830,7 @@ button {
 .hero__notification-title {
   color: var(--color-text-inverse);
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: var(--weight-bold);
   line-height: 1.2;
 }
@@ -839,26 +838,26 @@ button {
 .hero__notification-value {
   color: var(--color-gold-300);
   font-family: var(--font-body);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: var(--weight-semibold);
   line-height: 1.2;
 }
 
 .hero__notification--top-left {
-  left: -15px;
+  left: -75px;
   top: 40px;
   animation: float-top-left 5s ease-in-out infinite alternate;
 }
 
 .hero__notification--top-right {
-  right: -15px;
-  top: 120px;
+  right: -75px;
+  top: 130px;
   animation: float-top-right 6.5s ease-in-out infinite alternate;
 }
 
 .hero__notification--bottom-right {
-  right: -10px;
-  top: 220px;
+  right: -60px;
+  top: 250px;
   animation: float-bottom-right 5.8s ease-in-out infinite alternate;
 }
 
@@ -882,11 +881,11 @@ button {
 .hero__headline {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
-  font-size: var(--text-2xl);
-  line-height: var(--leading-tight);
+  font-size: 2.1rem; /* Scaled up from var(--text-2xl) (1.625rem) to 2.1rem (33.6px) for massive impact */
+  line-height: 1.15;
   color: var(--color-text-inverse);
   max-width: 620px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .hero__headline strong {
@@ -995,8 +994,8 @@ button {
 /* Beautiful Gourmet Arched Frame for Djenifer - REMOVED standard rigid borders to let her float freely */
 .hero__photo-wrapper {
   position: relative;
-  width: 330px; /* Enlarged photo on mobile */
-  height: 430px; /* Enlarged photo on mobile */
+  width: 350px; /* Visibly enlarged portrait on mobile */
+  height: 450px; /* Visibly enlarged portrait on mobile */
   margin: 0 auto;
   background: transparent;
   border: none;
@@ -2191,7 +2190,7 @@ button {
   }
 
   .hero__headline {
-    font-size: var(--text-3xl);
+    font-size: 2.6rem; /* Scaled up from var(--text-3xl) to 2.6rem (41.6px) */
   }
 
   .hero__logo {
@@ -2199,14 +2198,14 @@ button {
   }
 
   .hero__photo-wrapper {
-    width: 400px; /* Enlarged photo on tablet */
-    height: 500px; /* Enlarged photo on tablet */
+    width: 420px; /* Enlarged photo on tablet */
+    height: 520px; /* Enlarged photo on tablet */
     border-radius: 0; /* Transparent layout */
   }
 
   .hero__logo-overlap {
-    width: 430px; /* Perfect for tablet wrapper of 400px */
-    bottom: -55px; /* Lowered on tablet */
+    width: 450px; /* Enlarged logo overlap for tablet wrapper of 420px */
+    bottom: -60px; /* Lowered on tablet */
   }
 
   .hero__notification {
@@ -2229,18 +2228,18 @@ button {
   }
 
   .hero__notification--top-left {
-    left: -25px;
+    left: -90px; /* Pushed outwards next to the shoulder */
     top: 55px;
   }
 
   .hero__notification--top-right {
-    right: -25px;
-    top: 110px;
+    right: -90px; /* Pushed outwards next to the shoulder */
+    top: 130px;
   }
 
   .hero__notification--bottom-right {
-    right: -20px;
-    top: 270px;
+    right: -80px; /* Pushed outwards next to the waist */
+    top: 290px;
   }
 
 
@@ -2316,7 +2315,7 @@ button {
   }
 
   .hero__headline {
-    font-size: var(--text-4xl);
+    font-size: 3.4rem; /* Scaled up from var(--text-4xl) to 3.4rem (54.4px) for massive impact */
   }
 
   .hero__logo {
@@ -2345,8 +2344,8 @@ button {
   }
 
   .hero__photo-wrapper {
-    width: 480px; /* Enlarged photo on desktop */
-    height: 610px; /* Enlarged photo on desktop */
+    width: 500px; /* Enlarged photo on desktop */
+    height: 630px; /* Enlarged photo on desktop */
     border-radius: 0; /* Transparent layout */
   }
 
@@ -2354,10 +2353,10 @@ button {
   .hero__logo-overlap {
     display: block;
     position: absolute;
-    bottom: -70px; /* Lowered further to pants area for high contrast */
+    bottom: -75px; /* Lowered further to pants area for high contrast */
     left: 50%;
     transform: translateX(-50%);
-    width: 520px; /* Enlarged logo on desktop */
+    width: 540px; /* Enlarged logo on desktop */
     z-index: 4;
     pointer-events: none;
   }
@@ -2403,18 +2402,18 @@ button {
   }
 
   .hero__notification--top-left {
-    left: -35px;
+    left: -110px; /* Pushed outwards next to the shoulder */
     top: 70px;
   }
 
   .hero__notification--top-right {
-    right: -35px;
-    top: 140px;
+    right: -110px; /* Pushed outwards next to the shoulder */
+    top: 150px;
   }
 
   .hero__notification--bottom-right {
-    right: -25px;
-    top: 340px;
+    right: -90px; /* Pushed outwards next to the waist */
+    top: 360px;
   }
 
 
