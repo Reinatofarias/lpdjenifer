@@ -745,7 +745,7 @@ button {
 .hero__logo-overlap {
   display: block;
   position: absolute;
-  bottom: -55px; /* Lowered further to pants area for absolute high contrast */
+  bottom: 80px; /* Positioned perfectly at waist level to compensate for tight crop */
   left: 50%;
   transform: translateX(-50%);
   width: 350px; /* Visibly enlarged logo on mobile leaving only a tiny margin on screen edges */
@@ -2216,7 +2216,7 @@ button {
 
   .hero__logo-overlap {
     width: 410px; /* Enlarged logo overlap */
-    bottom: -70px; /* Lowered further to avoid notification overlap */
+    bottom: 90px; /* Positioned perfectly at waist level to compensate for tight crop */
   }
 
   .hero__notification {
@@ -2369,7 +2369,7 @@ button {
   .hero__logo-overlap {
     display: block;
     position: absolute;
-    bottom: -85px; /* Lowered further to pants area for high contrast */
+    bottom: 110px; /* Positioned perfectly at waist level to compensate for tight crop */
     left: 50%;
     transform: translateX(-50%);
     width: 500px; /* Enlarged logo on desktop */
