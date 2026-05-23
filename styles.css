@@ -808,7 +808,8 @@ button {
 .hero__notification-icon {
   width: 28px;
   height: 28px;
-  background: radial-gradient(circle, #FFF0D0 0%, var(--color-gold-500) 100%);
+  background: rgba(14, 9, 6, 0.8);
+  border: 1px solid rgba(197, 154, 78, 0.45);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -816,8 +817,8 @@ button {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
   font-size: 10px;
-  color: var(--color-text-primary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #FFF0D0;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05);
   flex-shrink: 0;
 }
 
@@ -843,26 +844,37 @@ button {
   line-height: 1.2;
 }
 
-.hero__notification--left {
-  left: -20px;
-  top: 60px;
-  animation: float-notification-left 5s ease-in-out infinite alternate;
+.hero__notification--top-left {
+  left: -15px;
+  top: 40px;
+  animation: float-top-left 5s ease-in-out infinite alternate;
 }
 
-.hero__notification--right {
-  right: -20px;
-  top: 150px;
-  animation: float-notification-right 6s ease-in-out infinite alternate;
+.hero__notification--top-right {
+  right: -15px;
+  top: 120px;
+  animation: float-top-right 6.5s ease-in-out infinite alternate;
 }
 
-@keyframes float-notification-left {
+.hero__notification--bottom-right {
+  right: -10px;
+  top: 220px;
+  animation: float-bottom-right 5.8s ease-in-out infinite alternate;
+}
+
+@keyframes float-top-left {
   0% { transform: translateY(0) rotate(1deg); }
-  100% { transform: translateY(-8px) rotate(-1deg); }
+  100% { transform: translateY(-10px) rotate(-1deg); }
 }
 
-@keyframes float-notification-right {
-  0% { transform: translateY(0) rotate(-1.5deg); }
-  100% { transform: translateY(-10px) rotate(1.5deg); }
+@keyframes float-top-right {
+  0% { transform: translateY(0) rotate(-1deg); }
+  100% { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+@keyframes float-bottom-right {
+  0% { transform: translateY(0) rotate(0.5deg); }
+  100% { transform: translateY(-8px) rotate(-1deg); }
 }
 
 
@@ -2216,14 +2228,19 @@ button {
     font-size: 10px;
   }
 
-  .hero__notification--left {
-    left: -30px;
-    top: 75px;
+  .hero__notification--top-left {
+    left: -25px;
+    top: 55px;
   }
 
-  .hero__notification--right {
-    right: -30px;
-    top: 180px;
+  .hero__notification--top-right {
+    right: -25px;
+    top: 110px;
+  }
+
+  .hero__notification--bottom-right {
+    right: -20px;
+    top: 270px;
   }
 
 
@@ -2385,14 +2402,19 @@ button {
     font-size: 11px;
   }
 
-  .hero__notification--left {
-    left: -40px;
-    top: 90px;
+  .hero__notification--top-left {
+    left: -35px;
+    top: 70px;
   }
 
-  .hero__notification--right {
-    right: -40px;
-    top: 220px;
+  .hero__notification--top-right {
+    right: -35px;
+    top: 140px;
+  }
+
+  .hero__notification--bottom-right {
+    right: -25px;
+    top: 340px;
   }
 
 
