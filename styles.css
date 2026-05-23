@@ -749,6 +749,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   width: 350px; /* Visibly enlarged logo on mobile leaving only a tiny margin on screen edges */
+  max-width: 92vw; /* Ensure it expands to fill 92% of screen width on mobile while scaling down gracefully */
   z-index: 4; /* Render in front of Djenifer (which is z-index: 3) */
   pointer-events: none; /* Make clicks pass through */
 }
