@@ -740,28 +740,14 @@ button {
 }
 
 .hero__logo-overlap {
-  position: absolute;
-  bottom: -15px; /* Perfect waist down positioning */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 310px; /* Overlaps Djenifer beautifully on mobile (wrapper is 290px) */
-  z-index: 4; /* Render in front of Djenifer (which is z-index: 3) */
-  pointer-events: none; /* Make clicks pass through */
-  display: block;
+  display: none; /* Hidden on mobile/tablet to avoid duplicate logos */
 }
 
-.hero__logo-overlap img {
-  width: 100%;
-  height: auto;
-  animation: logo-float 6s ease-in-out infinite;
-  transition: transform var(--duration-normal) var(--ease-bounce), filter var(--duration-normal) var(--ease-default);
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+/* Deeper shadow overlay for Djenifer's waist down to dramatically enhance readability on desktop */
+.hero__photo-shadow-overlay {
+  display: none; /* Hidden on mobile/tablet */
 }
 
-.hero__photo-wrapper:hover .hero__logo-overlap img {
-  transform: scale(1.06) rotate(0.5deg);
-  filter: drop-shadow(0 12px 30px rgba(213, 171, 85, 0.3)) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7));
-}
 
 
 .hero__headline {
@@ -2088,10 +2074,6 @@ button {
     border-radius: 0; /* Transparent layout */
   }
 
-  .hero__logo-overlap {
-    width: 390px; /* Perfect for tablet wrapper of 360px */
-    bottom: -20px;
-  }
 
 
   .recipe-cards {
@@ -2199,9 +2181,38 @@ button {
     border-radius: 0; /* Transparent layout */
   }
 
+  /* Show overlap and deep gradient overlay on desktop */
   .hero__logo-overlap {
+    display: block;
+    position: absolute;
+    bottom: -55px; /* Lowered from -30px to pants area for high contrast */
+    left: 50%;
+    transform: translateX(-50%);
     width: 450px; /* Perfect for desktop wrapper of 410px */
-    bottom: -30px;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .hero__logo-overlap img {
+    width: 100%;
+    height: auto;
+    animation: logo-float 6s ease-in-out infinite;
+    transition: transform var(--duration-normal) var(--ease-bounce), filter var(--duration-normal) var(--ease-default);
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.98)) drop-shadow(0 12px 35px rgba(0, 0, 0, 0.95));
+  }
+
+  .hero__photo-wrapper:hover .hero__logo-overlap img {
+    transform: scale(1.05) rotate(0.5deg);
+    filter: drop-shadow(0 15px 35px rgba(213, 171, 85, 0.35)) drop-shadow(0 12px 35px rgba(0, 0, 0, 0.98));
+  }
+
+  .hero__photo-shadow-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 38%, rgba(14, 9, 6, 0.75) 62%, rgba(14, 9, 6, 0.98) 92%);
+    z-index: 3.5;
+    pointer-events: none;
   }
 
 
