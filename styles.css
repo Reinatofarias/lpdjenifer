@@ -745,10 +745,10 @@ button {
 .hero__logo-overlap {
   display: block;
   position: absolute;
-  bottom: -50px; /* Lowered further to pants area for absolute high contrast */
+  bottom: -55px; /* Lowered further to pants area for absolute high contrast */
   left: 50%;
   transform: translateX(-50%);
-  width: 380px; /* Visibly enlarged logo on mobile */
+  width: 350px; /* Visibly enlarged logo on mobile leaving only a tiny margin on screen edges */
   z-index: 4; /* Render in front of Djenifer (which is z-index: 3) */
   pointer-events: none; /* Make clicks pass through */
 }
@@ -756,7 +756,7 @@ button {
 .hero__logo-overlap img {
   width: 100%;
   height: auto;
-  animation: logo-float 6s ease-in-out infinite;
+  /* Removed float animation to keep it stable and solid */
   transition: transform var(--duration-normal) var(--ease-bounce), filter var(--duration-normal) var(--ease-default);
   filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.98)) drop-shadow(0 12px 35px rgba(0, 0, 0, 0.95));
 }
@@ -844,20 +844,20 @@ button {
 }
 
 .hero__notification--top-left {
-  left: -75px;
-  top: 40px;
+  left: -32px; /* Pushed next to her shoulder (perfect fit for 290px wrapper, leaves 3px screen margins) */
+  top: 35px;
   animation: float-top-left 5s ease-in-out infinite alternate;
 }
 
 .hero__notification--top-right {
-  right: -75px;
-  top: 130px;
+  right: -32px; /* Pushed next to her shoulder (perfect fit for 290px wrapper, leaves 3px screen margins) */
+  top: 110px;
   animation: float-top-right 6.5s ease-in-out infinite alternate;
 }
 
 .hero__notification--bottom-right {
-  right: -60px;
-  top: 250px;
+  right: -25px; /* Pushed lower and side next to hips (completely avoids the waist logo overlap!) */
+  top: 290px;
   animation: float-bottom-right 5.8s ease-in-out infinite alternate;
 }
 
@@ -994,8 +994,8 @@ button {
 /* Beautiful Gourmet Arched Frame for Djenifer - REMOVED standard rigid borders to let her float freely */
 .hero__photo-wrapper {
   position: relative;
-  width: 350px; /* Visibly enlarged portrait on mobile */
-  height: 450px; /* Visibly enlarged portrait on mobile */
+  width: 290px; /* Redimensionada de forma inteligente para celular para liberar as laterais para as notificações sem cortes */
+  height: 385px; /* Redimensionada de forma inteligente para celular */
   margin: 0 auto;
   background: transparent;
   border: none;
@@ -2198,14 +2198,14 @@ button {
   }
 
   .hero__photo-wrapper {
-    width: 420px; /* Enlarged photo on tablet */
-    height: 520px; /* Enlarged photo on tablet */
+    width: 360px; /* Adjusted photo on tablet to free up margins */
+    height: 460px; /* Adjusted photo on tablet */
     border-radius: 0; /* Transparent layout */
   }
 
   .hero__logo-overlap {
-    width: 450px; /* Enlarged logo overlap for tablet wrapper of 420px */
-    bottom: -60px; /* Lowered on tablet */
+    width: 410px; /* Enlarged logo overlap */
+    bottom: -70px; /* Lowered further to avoid notification overlap */
   }
 
   .hero__notification {
@@ -2228,18 +2228,18 @@ button {
   }
 
   .hero__notification--top-left {
-    left: -90px; /* Pushed outwards next to the shoulder */
-    top: 55px;
+    left: -40px; /* Pushed next to the shoulder */
+    top: 50px;
   }
 
   .hero__notification--top-right {
-    right: -90px; /* Pushed outwards next to the shoulder */
+    right: -40px; /* Pushed next to the shoulder */
     top: 130px;
   }
 
   .hero__notification--bottom-right {
-    right: -80px; /* Pushed outwards next to the waist */
-    top: 290px;
+    right: -30px; /* Pushed next to the waist and lower down */
+    top: 320px;
   }
 
 
@@ -2344,8 +2344,8 @@ button {
   }
 
   .hero__photo-wrapper {
-    width: 500px; /* Enlarged photo on desktop */
-    height: 630px; /* Enlarged photo on desktop */
+    width: 460px; /* Adjusted photo on desktop to free up margins */
+    height: 580px; /* Adjusted photo on desktop */
     border-radius: 0; /* Transparent layout */
   }
 
@@ -2353,10 +2353,10 @@ button {
   .hero__logo-overlap {
     display: block;
     position: absolute;
-    bottom: -75px; /* Lowered further to pants area for high contrast */
+    bottom: -85px; /* Lowered further to pants area for high contrast */
     left: 50%;
     transform: translateX(-50%);
-    width: 540px; /* Enlarged logo on desktop */
+    width: 500px; /* Enlarged logo on desktop */
     z-index: 4;
     pointer-events: none;
   }
@@ -2364,7 +2364,7 @@ button {
   .hero__logo-overlap img {
     width: 100%;
     height: auto;
-    animation: logo-float 6s ease-in-out infinite;
+    /* Removed float animation on desktop for stability and overlap avoidance */
     transition: transform var(--duration-normal) var(--ease-bounce), filter var(--duration-normal) var(--ease-default);
     filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.98)) drop-shadow(0 12px 35px rgba(0, 0, 0, 0.95));
   }
@@ -2402,18 +2402,18 @@ button {
   }
 
   .hero__notification--top-left {
-    left: -110px; /* Pushed outwards next to the shoulder */
-    top: 70px;
+    left: -60px; /* Pushed next to the shoulder */
+    top: 60px;
   }
 
   .hero__notification--top-right {
-    right: -110px; /* Pushed outwards next to the shoulder */
+    right: -60px; /* Pushed next to the shoulder */
     top: 150px;
   }
 
   .hero__notification--bottom-right {
-    right: -90px; /* Pushed outwards next to the waist */
-    top: 360px;
+    right: -45px; /* Pushed next to the waist and lower down */
+    top: 400px;
   }
 
 
