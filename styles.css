@@ -799,7 +799,7 @@ button {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 
               inset 0 1px 2px rgba(255, 255, 255, 0.1);
   pointer-events: none;
-  z-index: 5;
+  z-index: 2.8; /* Float BEHIND Djenifer's hair/arm and behind overlapping logo for 3D parallax depth */
   min-width: 170px;
   max-width: 190px;
 }
@@ -844,21 +844,27 @@ button {
 }
 
 .hero__notification--top-left {
-  left: -32px; /* Pushed next to her shoulder (perfect fit for 290px wrapper, leaves 3px screen margins) */
-  top: 35px;
+  left: -32px;
+  top: 50px;
   animation: float-top-left 5s ease-in-out infinite alternate;
 }
 
 .hero__notification--top-right {
-  right: -32px; /* Pushed next to her shoulder (perfect fit for 290px wrapper, leaves 3px screen margins) */
-  top: 110px;
+  right: -32px;
+  top: 15px;
   animation: float-top-right 6.5s ease-in-out infinite alternate;
 }
 
+.hero__notification--mid-right {
+  right: -32px;
+  top: 85px;
+  animation: float-mid-right 5.8s ease-in-out infinite alternate;
+}
+
 .hero__notification--bottom-right {
-  right: -25px; /* Pushed lower and side next to hips (completely avoids the waist logo overlap!) */
-  top: 290px;
-  animation: float-bottom-right 5.8s ease-in-out infinite alternate;
+  right: -32px;
+  top: 155px;
+  animation: float-bottom-right 6s ease-in-out infinite alternate;
 }
 
 @keyframes float-top-left {
@@ -867,13 +873,18 @@ button {
 }
 
 @keyframes float-top-right {
-  0% { transform: translateY(0) rotate(-1deg); }
-  100% { transform: translateY(-12px) rotate(1.5deg); }
+  0% { transform: translateY(0) rotate(-1.5deg) scale(0.85); }
+  100% { transform: translateY(-12px) rotate(1deg) scale(0.85); }
+}
+
+@keyframes float-mid-right {
+  0% { transform: translateY(0) rotate(1deg) scale(0.92); }
+  100% { transform: translateY(-10px) rotate(-1.5deg) scale(0.92); }
 }
 
 @keyframes float-bottom-right {
-  0% { transform: translateY(0) rotate(0.5deg); }
-  100% { transform: translateY(-8px) rotate(-1deg); }
+  0% { transform: translateY(0) rotate(-0.5deg) scale(0.98); }
+  100% { transform: translateY(-8px) rotate(1deg) scale(0.98); }
 }
 
 
@@ -2228,18 +2239,23 @@ button {
   }
 
   .hero__notification--top-left {
-    left: -40px; /* Pushed next to the shoulder */
-    top: 50px;
+    left: -40px;
+    top: 65px;
   }
 
   .hero__notification--top-right {
-    right: -40px; /* Pushed next to the shoulder */
-    top: 130px;
+    right: -40px;
+    top: 25px;
+  }
+
+  .hero__notification--mid-right {
+    right: -40px;
+    top: 115px;
   }
 
   .hero__notification--bottom-right {
-    right: -30px; /* Pushed next to the waist and lower down */
-    top: 320px;
+    right: -40px;
+    top: 205px;
   }
 
 
@@ -2402,18 +2418,23 @@ button {
   }
 
   .hero__notification--top-left {
-    left: -60px; /* Pushed next to the shoulder */
-    top: 60px;
+    left: -60px;
+    top: 80px;
   }
 
   .hero__notification--top-right {
-    right: -60px; /* Pushed next to the shoulder */
-    top: 150px;
+    right: -60px;
+    top: 35px;
+  }
+
+  .hero__notification--mid-right {
+    right: -60px;
+    top: 155px;
   }
 
   .hero__notification--bottom-right {
-    right: -45px; /* Pushed next to the waist and lower down */
-    top: 400px;
+    right: -60px;
+    top: 275px;
   }
 
 
