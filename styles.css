@@ -745,10 +745,10 @@ button {
 .hero__logo-overlap {
   display: block;
   position: absolute;
-  bottom: -35px; /* Lowered on mobile to sit on dark pants for high contrast */
+  bottom: -45px; /* Lowered further to pants area for absolute high contrast */
   left: 50%;
   transform: translateX(-50%);
-  width: 310px; /* Overlaps Djenifer beautifully on mobile (wrapper is 290px) */
+  width: 350px; /* Enlarged logo on mobile */
   z-index: 4; /* Render in front of Djenifer (which is z-index: 3) */
   pointer-events: none; /* Make clicks pass through */
 }
@@ -771,13 +771,14 @@ button {
   display: block;
   position: absolute;
   inset: 0;
+  /* Multi-stop gradient starting from 25% (ribs/chest) down to 75% (solid black) */
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    transparent 42%,
-    rgba(14, 9, 6, 0.6) 55%,
-    rgba(14, 9, 6, 0.92) 70%,
-    rgba(14, 9, 6, 1) 85%,
+    transparent 25%,
+    rgba(14, 9, 6, 0.45) 45%,
+    rgba(14, 9, 6, 0.88) 60%,
+    rgba(14, 9, 6, 1) 75%,
     rgba(14, 9, 6, 1) 100%
   );
   z-index: 3.5; /* Between Djenifer (3) and Logo (4) */
@@ -902,11 +903,9 @@ button {
 /* Beautiful Gourmet Arched Frame for Djenifer - REMOVED standard rigid borders to let her float freely */
 .hero__photo-wrapper {
   position: relative;
-  width: 290px;
-  height: 380px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  width: 330px; /* Enlarged photo on mobile */
+  height: 430px; /* Enlarged photo on mobile */
+  margin: 0 auto;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -2108,14 +2107,14 @@ button {
   }
 
   .hero__photo-wrapper {
-    width: 360px;
-    height: 460px;
+    width: 400px; /* Enlarged photo on tablet */
+    height: 500px; /* Enlarged photo on tablet */
     border-radius: 0; /* Transparent layout */
   }
 
   .hero__logo-overlap {
-    width: 390px; /* Perfect for tablet wrapper of 360px */
-    bottom: -45px;
+    width: 430px; /* Perfect for tablet wrapper of 400px */
+    bottom: -55px; /* Lowered on tablet */
   }
 
 
@@ -2220,8 +2219,8 @@ button {
   }
 
   .hero__photo-wrapper {
-    width: 410px;
-    height: 520px;
+    width: 480px; /* Enlarged photo on desktop */
+    height: 610px; /* Enlarged photo on desktop */
     border-radius: 0; /* Transparent layout */
   }
 
@@ -2229,10 +2228,10 @@ button {
   .hero__logo-overlap {
     display: block;
     position: absolute;
-    bottom: -55px; /* Lowered from -30px to pants area for high contrast */
+    bottom: -70px; /* Lowered further to pants area for high contrast */
     left: 50%;
     transform: translateX(-50%);
-    width: 450px; /* Perfect for desktop wrapper of 410px */
+    width: 520px; /* Enlarged logo on desktop */
     z-index: 4;
     pointer-events: none;
   }
