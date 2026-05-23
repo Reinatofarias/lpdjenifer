@@ -107,7 +107,7 @@ button {
   --text-3xl:  2rem;
   --text-4xl:  2.625rem;
   --text-5xl:  3.5rem;
-  --text-price: 2.75rem;
+  --text-price: 3.8rem;
 
   --leading-tight:   1.15;
   --leading-snug:    1.25;
@@ -2295,7 +2295,7 @@ button {
     --section-padding-y: var(--space-32); /* 128px */
     --section-gap: var(--space-20); /* 80px */
     --container-padding: 0;
-    --text-price: 3.75rem;
+    --text-price: 4.8rem;
   }
 
   .hero {
